@@ -39,3 +39,4 @@ http://192.168.1.10:8080
 ## GitHub Pages 自动发布
 
 仓库已包含 `.github/workflows/deploy-pages.yml`。上传到 GitHub 后，在 `Settings → Pages` 将 Source 设为 `GitHub Actions`，之后每次推送到 `main` 都会自动发布。
+
