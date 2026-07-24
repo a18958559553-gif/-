@@ -1,0 +1,13 @@
+{
+  "name": "星石手作 · 在线DIY手串",
+  "short_name": "星石手作",
+  "description": "可在线DIY星座、塔罗与香氛手串的手机网页原型",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f8f5f2",
+  "theme_color": "#f8f5f2",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

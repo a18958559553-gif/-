@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f8f5f2" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="星石手作" />
+  <meta name="description" content="可在线DIY星座、塔罗与香氛手串的手机网页原型" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>星石手作 · 在线DIY手串</title>
+</head>
+<body>
+  <div class="desktop-bg" aria-hidden="true"></div>
+  <main class="app-shell" id="appShell">
+    <div class="safe-top"></div>
+
+    <header class="app-header" id="appHeader">
+      <button class="icon-btn is-hidden" id="backBtn" aria-label="返回">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="brand-lockup" id="brandBtn" aria-label="返回首页">
+        <span class="brand-mark">✦</span>
+        <span><b>星石手作</b><small>ASTRA STUDIO</small></span>
+      </button>
+      <button class="icon-btn" id="soundBtn" aria-label="切换提示音">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path class="sound-wave" d="M15 9a4 4 0 010 6M17.5 6.5a8 8 0 010 11"/></svg>
+      </button>
+    </header>
+
+    <section class="view is-active" id="homeView" data-view="home">
+      <div class="home-scroll page-scroll">
+        <section class="hero-card">
+          <div class="hero-copy">
+            <span class="eyebrow">在线定制 · 实物交付</span>
+            <h1>抽一张牌，<br />做一条属于你的手串</h1>
+            <p>从水晶、星座、塔罗与香氛主珠中自由搭配，让每一颗珠子都回应当下的心情。</p>
+            <div class="hero-actions">
+              <button class="primary-btn" data-action="start-design">开始设计 <span>→</span></button>
+              <button class="ghost-btn" data-action="random-theme">今日灵感</button>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="手串示意">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="mini-bracelet" id="heroBracelet"></div>
+            <div class="floating-tag tag-one"><b>月亮</b><small>直觉 · 治愈</small></div>
+            <div class="floating-tag tag-two"><b>香氛</b><small>白茶 · 雪松</small></div>
+          </div>
+        </section>
+
+        <section class="section-block compact-block">
+          <div class="section-title-row">
+            <div><span class="eyebrow">FOUR MOODS</span><h2>今天想拥有什么能量？</h2></div>
+          </div>
+          <div class="mood-grid" id="homeMoodGrid"></div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-title-row">
+            <div><span class="eyebrow">HOW IT WORKS</span><h2>像小游戏一样完成定制</h2></div>
+          </div>
+          <div class="steps-row">
+            <article><span>01</span><b>选主题</b><p>从情绪、星座或塔罗获得灵感。</p></article>
+            <article><span>02</span><b>在线串珠</b><p>点击加珠，拖动调整，价格实时更新。</p></article>
+            <article><span>03</span><b>制作寄出</b><p>确认设计后，由手作师按图制作。</p></article>
+          </div>
+        </section>
+
+        <section class="testimonial-card">
+          <div class="quote-mark">“</div>
+          <p>不是买一条别人设计好的手串，<br />而是把自己此刻的状态戴在手上。</p>
+          <div class="user-row"><span class="avatar">M</span><span><b>Moonlight_07</b><small>已完成「月亮守护」设计</small></span><span class="rating">★★★★★</span></div>
+        </section>
+
+        <div class="bottom-spacer"></div>
+      </div>
+    </section>
+
+    <section class="view" id="designerView" data-view="designer">
+      <div class="designer-layout">
+        <section class="canvas-panel" id="canvasPanel">
+          <div class="designer-topline">
+            <div>
+              <span class="eyebrow">LIVE CUSTOMIZER</span>
+              <h2>我的手串</h2>
+            </div>
+            <button class="pill-btn" id="previewBtn">成品预览</button>
+          </div>
+
+          <div class="bracelet-stage" id="braceletStage">
+            <div class="stage-glow"></div>
+            <div class="bracelet-ring" id="braceletRing" aria-label="可拖动调整顺序的手串"></div>
+            <button class="center-info" id="centerInfo" aria-label="手围设置">
+              <b id="beadCount">0颗</b>
+              <span id="wristDisplay">适用 16.0cm</span>
+              <small id="priceDisplay">¥0</small>
+            </button>
+            <div class="drag-hint" id="dragHint">长按珠子并沿圆环拖动，可调整顺序</div>
+          </div>
+
+          <div class="tool-row">
+            <button id="undoBtn"><span>↶</span>撤销</button>
+            <button id="aiBtn"><span>✦</span>AI灵感</button>
+            <button id="clearBtn"><span>⌫</span>清空</button>
+            <button id="shuffleBtn"><span>⤨</span>重排</button>
+          </div>
+        </section>
+
+        <section class="material-panel">
+          <div class="size-control" id="sizeControl">
+            <div><b>手围尺寸</b><span id="recommendedText">建议 18–20 颗</span></div>
+            <input id="wristRange" type="range" min="14" max="19" step="0.5" value="16" aria-label="手围尺寸" />
+            <div class="range-labels"><span>14cm</span><span>19cm</span></div>
+          </div>
+
+          <div class="category-tabs" id="categoryTabs" role="tablist"></div>
+          <div class="material-scroll" id="materialList"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="view" id="inspirationView" data-view="inspiration">
+      <div class="page-scroll inspiration-page">
+        <div class="page-heading">
+          <span class="eyebrow">CURATED DESIGNS</span>
+          <h1>灵感配方</h1>
+          <p>选择一个主题作为起点，再进入编辑器自由替换。</p>
+        </div>
+        <div class="filter-chips" id="filterChips"></div>
+        <div class="preset-list" id="presetList"></div>
+        <div class="bottom-spacer"></div>
+      </div>
+    </section>
+
+    <section class="view" id="profileView" data-view="profile">
+      <div class="page-scroll profile-page">
+        <section class="profile-hero">
+          <div class="profile-avatar">✦</div>
+          <div><span class="eyebrow">MY ASTRA</span><h1>我的星石</h1><p>保存灵感，也保存每一次为自己做出的选择。</p></div>
+        </section>
+        <section class="stats-card">
+          <div><b id="savedCount">0</b><span>我的设计</span></div>
+          <div><b id="totalBeads">0</b><span>使用珠子</span></div>
+          <div><b id="favoriteMood">—</b><span>偏爱能量</span></div>
+        </section>
+        <section class="section-block profile-block">
+          <div class="section-title-row"><div><span class="eyebrow">DESIGN HISTORY</span><h2>最近设计</h2></div></div>
+          <div id="historyList" class="history-list"></div>
+        </section>
+        <section class="settings-card">
+          <button id="installBtn"><span>＋</span><b>添加到手机桌面</b><small>获得接近小程序的全屏体验</small><i>›</i></button>
+          <button id="resetStorageBtn"><span>↺</span><b>清除本地数据</b><small>删除保存的设计记录</small><i>›</i></button>
+        </section>
+        <div class="bottom-spacer"></div>
+      </div>
+    </section>
+
+    <nav class="bottom-nav" id="bottomNav" aria-label="底部导航">
+      <button class="is-active" data-nav="home"><span>⌂</span><b>首页</b></button>
+      <button data-nav="designer"><span>◌</span><b>DIY</b></button>
+      <button data-nav="inspiration"><span>✦</span><b>灵感</b></button>
+      <button data-nav="profile"><span>♡</span><b>我的</b></button>
+    </nav>
+
+    <div class="modal-backdrop" id="themeModal" aria-hidden="true">
+      <section class="bottom-sheet theme-sheet" role="dialog" aria-modal="true" aria-labelledby="themeTitle">
+        <div class="sheet-handle"></div>
+        <div class="sheet-heading"><div><span class="eyebrow">AI MOOD MIX</span><h2 id="themeTitle">选择今天的能量</h2></div><button class="close-btn" data-close="themeModal">×</button></div>
+        <div class="theme-options" id="themeOptions"></div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="previewModal" aria-hidden="true">
+      <section class="bottom-sheet preview-sheet" role="dialog" aria-modal="true" aria-labelledby="previewTitle">
+        <div class="sheet-handle"></div>
+        <div class="sheet-heading"><div><span class="eyebrow">FINAL PREVIEW</span><h2 id="previewTitle">你的专属手串</h2></div><button class="close-btn" data-close="previewModal">×</button></div>
+        <div class="preview-product">
+          <div class="preview-orbit" id="previewOrbit"></div>
+          <div class="preview-card-copy"><span id="previewTheme">自定义能量</span><b id="previewCode">ASTRA-0000</b></div>
+        </div>
+        <div class="summary-grid">
+          <div><span>珠子数量</span><b id="summaryCount">0颗</b></div>
+          <div><span>适用手围</span><b id="summaryWrist">16.0cm</b></div>
+          <div><span>预计价格</span><b id="summaryPrice">¥0</b></div>
+        </div>
+        <div class="preview-actions">
+          <button class="ghost-btn" id="saveImageBtn">保存设计卡</button>
+          <button class="primary-btn" id="addOrderBtn">保存并加入订单</button>
+        </div>
+        <p class="fine-print">本网页为交互原型，订单按钮仅保存到本机，不会产生真实付款。</p>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <template id="materialCardTemplate">
+    <button class="material-card">
+      <span class="material-swatch"><i></i></span>
+      <span class="material-copy"><b></b><small></small></span>
+      <span class="material-price"></span>
+      <span class="add-mark">＋</span>
+    </button>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
