@@ -2,13 +2,13 @@
   'use strict';
 
   const MATERIALS = [
-    { id:'rose', category:'crystal', name:'粉晶', subtitle:'温柔 · 连接', price:12, size:10, bg:'radial-gradient(circle at 32% 28%, #fff9fc 0 10%, #eebdc8 34%, #c98299 100%)' },
-    { id:'amethyst', category:'crystal', name:'紫水晶', subtitle:'直觉 · 安定', price:18, size:10, bg:'radial-gradient(circle at 30% 25%, #f4eaff 0 10%, #a586ca 38%, #604174 100%)' },
-    { id:'moonstone', category:'crystal', name:'月光石', subtitle:'柔光 · 守护', price:22, size:10, bg:'radial-gradient(circle at 30% 25%, #ffffff 0 13%, #dbe7ee 40%, #aeb8c7 100%)' },
-    { id:'aquamarine', category:'crystal', name:'海蓝宝', subtitle:'清澈 · 表达', price:20, size:10, bg:'radial-gradient(circle at 30% 25%, #f4ffff 0 11%, #8bcad1 42%, #4d8997 100%)' },
-    { id:'citrine', category:'crystal', name:'黄水晶', subtitle:'明亮 · 行动力', price:16, size:10, bg:'radial-gradient(circle at 30% 25%, #fffde6 0 11%, #efcf67 40%, #c0832d 100%)' },
-    { id:'tiger', category:'crystal', name:'虎眼石', subtitle:'自信 · 边界', price:15, size:10, bg:'linear-gradient(145deg, #31251d 0 22%, #bd8640 32% 55%, #4a3423 65% 77%, #d1a354 85%)' },
-    { id:'obsidian', category:'crystal', name:'黑曜石', subtitle:'沉静 · 防护', price:10, size:10, bg:'radial-gradient(circle at 30% 25%, #6a676b 0 7%, #28262b 42%, #080809 100%)' },
+    { id:'rose', category:'crystal', name:'粉晶', subtitle:'温柔 · 连接', price:12, size:10, bg:'radial-gradient(circle at 32% 28%, #fff9fc 0 10%, #eebdc8 34%, #c98299 100%)', img:'./assets/beads/rose-quartz.png' },
+    { id:'amethyst', category:'crystal', name:'紫水晶', subtitle:'直觉 · 安定', price:18, size:10, bg:'radial-gradient(circle at 30% 25%, #f4eaff 0 10%, #a586ca 38%, #604174 100%)', img:'./assets/beads/amethyst.png' },
+    { id:'moonstone', category:'crystal', name:'月光石', subtitle:'柔光 · 守护', price:22, size:10, bg:'radial-gradient(circle at 30% 25%, #ffffff 0 13%, #dbe7ee 40%, #aeb8c7 100%)', img:'./assets/beads/moonstone.png' },
+    { id:'aquamarine', category:'crystal', name:'海蓝宝', subtitle:'清澈 · 表达', price:20, size:10, bg:'radial-gradient(circle at 30% 25%, #f4ffff 0 11%, #8bcad1 42%, #4d8997 100%)', img:'./assets/beads/aquamarine.png' },
+    { id:'citrine', category:'crystal', name:'黄水晶', subtitle:'明亮 · 行动力', price:16, size:10, bg:'radial-gradient(circle at 30% 25%, #fffde6 0 11%, #efcf67 40%, #c0832d 100%)', img:'./assets/beads/citrine.png' },
+    { id:'tiger', category:'crystal', name:'虎眼石', subtitle:'自信 · 边界', price:15, size:10, bg:'linear-gradient(145deg, #31251d 0 22%, #bd8640 32% 55%, #4a3423 65% 77%, #d1a354 85%)', img:'./assets/beads/tigers-eye.png' },
+    { id:'obsidian', category:'crystal', name:'黑曜石', subtitle:'沉静 · 防护', price:10, size:10, bg:'radial-gradient(circle at 30% 25%, #6a676b 0 7%, #28262b 42%, #080809 100%)', img:'./assets/beads/obsidian.png' },
     { id:'moss', category:'crystal', name:'苔藓玛瑙', subtitle:'森林 · 生长', price:19, size:10, bg:'radial-gradient(circle at 34% 26%, #eef5e8 0 12%, #93a884 32%, #4b6650 64%, #d9d4ba 100%)' },
 
     { id:'aries', category:'zodiac', name:'白羊符号珠', subtitle:'♈ 火元素', price:24, size:11, type:'charm', bg:'linear-gradient(145deg, #e7b087, #9c4c37)' },
@@ -25,7 +25,7 @@
     { id:'strength', category:'tarot', name:'力量牌珠', subtitle:'勇气 · 温柔', price:31, size:12, type:'charm', bg:'linear-gradient(145deg, #c38f5f, #795033 55%, #cba86e)' },
     { id:'hermit', category:'tarot', name:'隐者牌珠', subtitle:'独处 · 洞察', price:28, size:12, type:'charm', bg:'linear-gradient(145deg, #9d9991, #464441)' },
 
-    { id:'porous-white', category:'aroma', name:'白瓷扩香珠', subtitle:'适合清新香调', price:18, size:12, type:'aroma', bg:'radial-gradient(circle at 30% 25%, #ffffff 0 10%, #e7e2dc 45%, #c8beb5 100%)' },
+    { id:'porous-white', category:'aroma', name:'白瓷扩香珠', subtitle:'适合清新香调', price:18, size:12, type:'aroma', bg:'radial-gradient(circle at 30% 25%, #ffffff 0 10%, #e7e2dc 45%, #c8beb5 100%)', img:'./assets/beads/porous-white.png' },
     { id:'lava-black', category:'aroma', name:'黑色火山石', subtitle:'适合木质香调', price:12, size:11, type:'aroma', bg:'radial-gradient(circle at 35% 30%, #5d5a57 0 4%, #242321 20% 27%, #4b4845 29% 34%, #161514 55%)' },
     { id:'lavender-ceramic', category:'aroma', name:'薰衣草陶瓷珠', subtitle:'适合花香调', price:22, size:12, type:'aroma', bg:'radial-gradient(circle at 30% 25%, #f5eff9 0 9%, #c8b4d2 42%, #9482a4 100%)' },
     { id:'tea-ceramic', category:'aroma', name:'白茶云纹珠', subtitle:'适合茶香调', price:22, size:12, type:'aroma', bg:'linear-gradient(145deg, #f3efe4, #c8c5ad 50%, #e6dfcc)' },
@@ -94,6 +94,18 @@
   function money(n) { return `¥${n}`; }
   function totalPrice() { return state.beads.reduce((sum, b) => sum + material(b.id).price, 38); }
   function recommendedCount() { return Math.round((state.wrist * 10) / 9.2); }
+
+
+  function applyBeadAppearance(node, m) {
+    if (!node || !m) return;
+    if (m.img) {
+      node.style.background = `center / cover no-repeat url("${m.img}")`;
+      node.dataset.photo = 'true';
+    } else {
+      node.style.background = m.bg;
+      node.dataset.photo = 'false';
+    }
+  }
 
   function init() {
     cacheEls();
@@ -181,7 +193,7 @@
     ids.forEach((id, i) => {
       const bead = document.createElement('i');
       bead.className = 'mini-bead';
-      bead.style.background = material(id).bg;
+      applyBeadAppearance(bead, material(id));
       const a = (Math.PI * 2 * i / ids.length) - Math.PI/2;
       const r = 82;
       bead.style.left = `${97.5 + Math.cos(a)*r}px`;
@@ -213,7 +225,8 @@
       const card = document.createElement('button');
       card.className = 'material-card';
       card.dataset.type = m.type || 'bead';
-      card.innerHTML = `<span class="material-swatch" style="--swatch:${m.bg}"><i></i></span><span class="material-copy"><b>${m.name}</b><small>${m.subtitle}</small></span><span class="material-price">${money(m.price)}</span><span class="add-mark">＋</span>`;
+      card.innerHTML = `<span class="material-swatch"><i></i></span><span class="material-copy"><b>${m.name}</b><small>${m.subtitle}</small></span><span class="material-price">${money(m.price)}</span><span class="add-mark">＋</span>`;
+      applyBeadAppearance(card.querySelector('.material-swatch i'), m);
       card.addEventListener('click', () => addBead(m.id));
       els.materialList.append(card);
     });
@@ -264,7 +277,7 @@
       btn.dataset.type = m.type || 'bead';
       btn.setAttribute('aria-label', `${m.name}，点击选中，再次点击移除`);
       const scale = Math.max(.79, Math.min(1.12, 19 / Math.max(n, 16)));
-      btn.style.setProperty('--bead-bg', m.bg);
+      applyBeadAppearance(btn, m);
       btn.style.setProperty('--bead-size', `${Math.max(22, (m.size / 10) * 33 * scale)}px`);
       btn.style.left = `${center + Math.cos(angle)*radius}px`;
       btn.style.top = `${center + Math.sin(angle)*radius}px`;
@@ -421,7 +434,7 @@
     ids.slice(0,17).forEach((id,i,arr) => {
       const bead = document.createElement('i');
       bead.className = smallClass;
-      bead.style.setProperty('--bead-bg', material(id).bg);
+      applyBeadAppearance(bead, material(id));
       const a = Math.PI*2*i/arr.length - Math.PI/2;
       bead.style.left = `${50 + Math.cos(a)*39}%`;
       bead.style.top = `${50 + Math.sin(a)*39}%`;
@@ -460,7 +473,7 @@
     state.beads.forEach((b,i)=>{
       const m=material(b.id), bead=document.createElement('i');
       bead.className='mini-bead';
-      bead.style.background=m.bg;
+      applyBeadAppearance(bead, m);
       const a=Math.PI*2*i/n-Math.PI/2, r=90;
       const s=Math.max(22,Math.min(32,m.size*2.7));
       bead.style.width=bead.style.height=`${s}px`;
@@ -507,7 +520,7 @@
     if (!root) return;
     root.innerHTML='';
     ids.slice(0,16).forEach((id,i,arr)=>{
-      const bead=document.createElement('i'); bead.style.setProperty('--bead-bg',material(id).bg);
+      const bead=document.createElement('i'); applyBeadAppearance(bead, material(id));
       const a=Math.PI*2*i/arr.length-Math.PI/2;
       bead.style.left=`${50+Math.cos(a)*34}%`; bead.style.top=`${50+Math.sin(a)*34}%`;
       root.append(bead);

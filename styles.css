@@ -328,3 +328,15 @@ h1, h2 { font-family: Georgia, "Songti SC", "STSong", serif; font-weight: 500; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+
+/* Photo bead assets */
+.material-swatch i[data-photo="true"],
+.bracelet-bead[data-photo="true"],
+.preset-mini-bead[data-photo="true"],
+.mini-bead[data-photo="true"],
+.history-orbit i[data-photo="true"] { background-position: center; background-size: cover; background-repeat: no-repeat; }
+.bracelet-bead[data-photo="true"] { box-shadow: 0 4px 7px rgba(57,43,37,.18), inset 0 0 0 1px rgba(255,255,255,.28); }
+.bracelet-bead[data-photo="true"]::after { background: rgba(255,255,255,.38); }
+.material-swatch i[data-photo="true"] { box-shadow: 0 3px 6px rgba(57,43,37,.14), inset 0 0 0 1px rgba(255,255,255,.3); }
+.preset-mini-bead[data-photo="true"], .mini-bead[data-photo="true"], .history-orbit i[data-photo="true"] { box-shadow: 0 3px 6px rgba(51,38,32,.15), inset 0 0 0 1px rgba(255,255,255,.22); }
